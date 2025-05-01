@@ -26,21 +26,30 @@ pygame (para gráficos e controle de jogo)
 Como Instalar
 Clone este repositório para sua máquina local utilizando o comando:
 
-bash
+```
 git clone https://github.com/Rjj18/Heroes-of-Paraisopolis.git
+```
+
 Navegue até a pasta do projeto:
 
-bash
+```
 cd Heroes-of-Paraisopolis
+```
+
 Instale as dependências do Python:
 
-bash
+```
 pip install -r requirements.txt
+```
+
 Como Jogar
+
 Execute o arquivo principal do jogo:
 
-bash
+```
 python main.py
+```
+
 Siga as instruções na tela para começar a jogar.
 
 ## Como Contribuir
