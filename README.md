@@ -59,16 +59,21 @@ Se você quiser contribuir para o projeto, siga os seguintes passos:
 Faça um fork deste repositório.
 Crie uma nova branch:
 
-bash
+```
 git checkout -b minha-contribuicao
+```
+
 Faça as alterações desejadas e comite:
 
-bash
+```
 git commit -m "Descrição das alterações"
+```
+
 Envie as alterações para o seu fork:
 
-bash
+```
 git push origin minha-contribuicao
+```
 
 Abra um Pull Request neste repositório.
 
