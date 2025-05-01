@@ -23,7 +23,7 @@ Para rodar o jogo, você precisará:
 - As seguintes bibliotecas Python:
   - pygame (para gráficos e controle de jogo)
 
-Como Instalar
+## Como Instalar
 Clone este repositório para sua máquina local utilizando o comando:
 
 ```
