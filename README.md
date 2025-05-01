@@ -16,12 +16,12 @@ O objetivo deste projeto é proporcionar uma experiência de aprendizado interat
 
 ## Requisitos
 
-- Para rodar o jogo, você precisará:
+Para rodar o jogo, você precisará:
 
-Python 3.8 ou superior instalado em sua máquina.
+- Python 3.8 ou superior instalado em sua máquina.
 
-As seguintes bibliotecas Python:
-pygame (para gráficos e controle de jogo)
+- As seguintes bibliotecas Python:
+  - pygame (para gráficos e controle de jogo)
 
 Como Instalar
 Clone este repositório para sua máquina local utilizando o comando:
