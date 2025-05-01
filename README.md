@@ -42,7 +42,7 @@ Instale as dependências do Python:
 pip install -r requirements.txt
 ```
 
-Como Jogar
+## Como Jogar
 
 Execute o arquivo principal do jogo:
 
