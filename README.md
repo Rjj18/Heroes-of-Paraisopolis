@@ -80,4 +80,4 @@ Abra um Pull Request neste repositório.
 
 ## Licença
 
-Este projeto está licenciado sob a MIT License.
+Este projeto está licenciado sob a [MIT License](https://opensource.org/licenses/MIT).
