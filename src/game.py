@@ -3,14 +3,18 @@ from settings import SCREEN_WIDTH, SCREEN_HEIGHT, WHITE, BLACK, IMAGES_PATH, SOU
 
 def load_assets():
     # Load images
-    sword_image = pygame.image.load(IMAGES_PATH + "sword_normal.png")
-    shield_image = pygame.image.load(IMAGES_PATH + "a_shield_kite_gold.png")
+    sword_image = pygame.image.load(IMAGES_PATH + "sword_normal.png")  # Sword image
+    shield_image = pygame.image.load(IMAGES_PATH + "a_shield_kite_gold.png")  # Shield image
+    background_image = pygame.image.load(IMAGES_PATH + "castle_entrance.png")  # Background image
+
+    # Scale the background to fit the screen dimensions
+    background_image = pygame.transform.scale(background_image, (SCREEN_WIDTH, SCREEN_HEIGHT))
 
     # Load background music
-    pygame.mixer.music.load(SOUNDS_PATH + "Cheers For Starlight Loop.mp3")
+    pygame.mixer.music.load(SOUNDS_PATH + "Cheers For Starlight Loop.mp3")  # Background music
     pygame.mixer.music.play(-1)  # Loop the music indefinitely
 
-    return sword_image, shield_image
+    return sword_image, shield_image, background_image
 
 def render_game(screen, title_font, sword_image, shield_image):
     # Render title

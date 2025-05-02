@@ -10,3 +10,4 @@ BLACK = (0, 0, 0)
 ASSETS_PATH = "../assets/"
 IMAGES_PATH = ASSETS_PATH + "images/"
 SOUNDS_PATH = ASSETS_PATH + "sounds/"
+TEXT_PATH = ASSETS_PATH + "text/"
