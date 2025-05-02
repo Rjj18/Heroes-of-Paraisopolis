@@ -61,7 +61,7 @@ while running:
     elif current_state == STATE_GAME:
         # Render a simple black screen with scrolling text
         screen.fill(BLACK)
-        text_y = render_scrolling_text(screen, text_font, scrolling_text, text_y, 0.0)
+        text_y = render_scrolling_text(screen, text_font, scrolling_text, text_y, 0.03)
 
     # Update the display
     pygame.display.flip()
