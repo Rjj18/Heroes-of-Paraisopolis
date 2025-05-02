@@ -7,6 +7,13 @@ spec = importlib.util.spec_from_file_location("text_assets", TEXT_PATH + "text_a
 text_assets = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(text_assets)
 
-def render_menu(screen, menu_font):
-    menu_text = menu_font.render(text_assets.MENU_TEXT["start_adventure"], True, WHITE)
-    screen.blit(menu_text, (SCREEN_WIDTH // 2 - menu_text.get_width() // 2, SCREEN_HEIGHT // 2 + 150))
+class Menu:
+    def __init__(self, screen, font, text_assets):
+        self.screen = screen
+        self.font = font
+        self.text_assets = text_assets
+
+    def render(self):
+        menu_text = self.font.render(self.text_assets.MENU_TEXT["title"], True, WHITE)
+        self.screen.fill((0, 0, 0))  # Clear the screen with black
+        self.screen.blit(menu_text, (SCREEN_WIDTH // 2 - menu_text.get_width() // 2, SCREEN_HEIGHT // 2))

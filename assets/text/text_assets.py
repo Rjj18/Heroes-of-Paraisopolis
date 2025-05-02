@@ -1,5 +1,10 @@
+# Title Text
+TITLE_TEXT = "Heroes of Paraisópolis"
+
 # Menu Text
 MENU_TEXT = {
+    "title": "Heroes of Paraisópolis",
+    "subtitle": "Aventura de RPG",
     "start_adventure": "Iniciar Aventura"
 }
 
