@@ -1,9 +1,8 @@
 import pygame
 import sys
 from settings import SCREEN_WIDTH, SCREEN_HEIGHT, BLACK, TEXT_PATH
-from game import Game
-from menu import Menu
-from scrolling_text import ScrollingText
+from title import Title
+from opening import Opening
 
 # Import text assets dynamically from the text_assets module
 import importlib.util
@@ -19,18 +18,17 @@ class HeroesOfParaisopolis:
         self.clock = pygame.time.Clock()
 
         # Fonts
-        self.menu_font = pygame.font.Font(None, 80)
-        self.text_font = pygame.font.Font(None, 40)
+        self.title_font = pygame.font.Font(None, 80)
+        self.opening_font = pygame.font.Font(None, 40)
 
         # Game states
-        self.STATE_MENU = "menu"
-        self.STATE_GAME = "game"
-        self.current_state = self.STATE_MENU
+        self.STATE_OPENING = "opening"
+        self.STATE_TITLE = "title"
+        self.current_state = self.STATE_OPENING
 
         # Components
-        self.menu = Menu(self.screen, self.menu_font, text_assets)
-        self.game = Game(self.screen)
-        self.scrolling_text = ScrollingText(self.screen, self.text_font, text_assets.SCROLLING_TEXT)
+        self.opening = Title(self.screen, self.title_font, text_assets)
+        self.scrolling_text = Opening(self.screen, self.opening_font, text_assets.SCROLLING_TEXT)
 
         # Timer for transitioning from menu to game
         self.menu_start_time = pygame.time.get_ticks()
@@ -42,17 +40,17 @@ class HeroesOfParaisopolis:
                 if event.type == pygame.QUIT:
                     running = False
 
-            # Check if 5 seconds have passed to transition to the game screen
-            if self.current_state == self.STATE_MENU:
-                elapsed_time = pygame.time.get_ticks() - self.menu_start_time
-                if elapsed_time >= 5000:  # 5000 milliseconds = 5 seconds
-                    self.current_state = self.STATE_GAME
-
             # Render based on the current state
-            if self.current_state == self.STATE_MENU:
-                self.menu.render()
-            elif self.current_state == self.STATE_GAME:
+            if self.current_state == self.STATE_OPENING:
                 self.scrolling_text.render(0.7)
+                print(f"Current state: {self.current_state}")  # Debugging log
+                print(f"Text Y position: {self.scrolling_text.text_y}")  # Debugging log
+                if self.scrolling_text.out_of_bounds():
+                    print("Text is out of bounds. Changing state to TITLE.")  # Debugging log
+                    self.current_state = self.STATE_TITLE
+                     # Change state to TITLE
+            elif self.current_state == self.STATE_TITLE:
+                self.opening.render()  # Render the title screen
 
             # Update the display
             pygame.display.flip()
