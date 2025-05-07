@@ -1,6 +1,6 @@
 import pygame
 import sys
-from settings import SCREEN_WIDTH, SCREEN_HEIGHT, BLACK, TEXT_PATH
+from settings import SCREEN_WIDTH, SCREEN_HEIGHT, TEXT_PATH
 from title import Title
 from opening import Opening
 
@@ -24,6 +24,7 @@ class HeroesOfParaisopolis:
         # Game states
         self.STATE_OPENING = "opening"
         self.STATE_TITLE = "title"
+        self.STATE_MAIN_MENU = "main_menu"
         self.current_state = self.STATE_OPENING
 
         # Components
@@ -43,10 +44,7 @@ class HeroesOfParaisopolis:
             # Render based on the current state
             if self.current_state == self.STATE_OPENING:
                 self.scrolling_text.render(0.7)
-                print(f"Current state: {self.current_state}")  # Debugging log
-                print(f"Text Y position: {self.scrolling_text.text_y}")  # Debugging log
                 if self.scrolling_text.out_of_bounds():
-                    print("Text is out of bounds. Changing state to TITLE.")  # Debugging log
                     self.current_state = self.STATE_TITLE
                      # Change state to TITLE
             elif self.current_state == self.STATE_TITLE:
